@@ -1,0 +1,33 @@
+h1{
+    font-size: 5em;
+}
+
+h2{
+    font-size: 3em;
+    text-align: center;
+}
+
+header  {
+    display: flex;
+}
+
+div{
+    display: flex;
+}
+
+li{
+    display: inline;
+    margin: 0 3em;
+}
+
+.container{
+    width: 50vw;
+}
+
+#imagen {
+    justify-content: flex-end;
+}
+
+#presentacion {
+    flex-direction: column;
+}
