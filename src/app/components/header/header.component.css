@@ -4,33 +4,31 @@ h1{
 
 h2{
     font-size: 3em;
-    text-align: center;
+    margin: 1em 2em;
 }
-
 
 header  {
     display: flex;
     background-color: aqua;
-}
-
-div{
-    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 100vh;
 }
 
 li{
     display: inline;
-    margin: 0 3em;
+    margin: 0 2em;
     background-color: blue;
 }
 
-.container{
-    width: 50vw;
-}
-
 #imagen {
-    justify-content: flex-end;
+    align-self: center;
+    width: auto;
 }
 
 #presentacion {
     flex-direction: column;
+    justify-content: center;
+    margin: auto 0;
+    width: auto;
 }
