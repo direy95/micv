@@ -11,6 +11,12 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { TrabajosComponent } from './components/trabajos/trabajos.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { PortfolioService } from './services/portfolio.service';
+import { InterceptorService } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -20,15 +26,21 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ExperienciaComponent,
     EstudiosComponent,
     SkillsComponent,
-    TrabajosComponent
+    TrabajosComponent,
+    IniciarSesionComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PortfolioService,
+    {provide: HTTP_INTERCEPTORS, useClass:InterceptorService, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
