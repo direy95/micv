@@ -1,7 +1,7 @@
 <h1 id="titulo">Estudios</h1>
-<div class="container">
+<div class="container" *ngFor="let estudio of estudios">
     <div class="grid-item" id="logo"><img src="https://picsum.photos/1080/1080" alt="Logo"></div>
-    <div class="grid-item item" >2018 - 2022</div>
-    <div class="grid-item item" >Lic en artes escenicas</div>
-    <div class="grid-item item" >Canto baile y actuación</div>
+    <div class="grid-item item" >{{estudio.anoI}} - {{estudio.anoF}}</div>
+    <div class="grid-item item" >{{estudio.titulo}}</div>
+    <div class="grid-item item" >{{estudio.descripcion}}</div>
 </div> 

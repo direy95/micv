@@ -7,7 +7,7 @@ img{
     grid-template-columns: auto auto;
     background-color: #2196F3;
     padding: 10px;
-    margin: auto 10%
+    margin: 1em 10%
 }
 
 .grid-item {
