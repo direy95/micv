@@ -1,85 +1,10 @@
 <h1 id="titulo">Habilidades</h1>
 <div class="container">
-    <div class="grid-item">
+    <div class="grid-item" *ngFor="let skill of skills">
         <circle-progress
-            [title]="'Javascript'"
+            [title]=[skill.skill]
             [showSubtitle]="false"
-            [percent]="50"
-            [showUnits]="false"
-            [radius]="100"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="300"
-        ></circle-progress>
-    </div>
-    <div class="grid-item">
-        <circle-progress
-            [title]="'Javascript'"
-            [showSubtitle]="false"
-            [percent]="50"
-            [showUnits]="false"
-            [radius]="100"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="300"
-        ></circle-progress>
-    </div>
-    <div class="grid-item">
-        <circle-progress
-            [title]="'Javascript'"
-            [showSubtitle]="false"
-            [percent]="50"
-            [showUnits]="false"
-            [radius]="100"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="300"
-        ></circle-progress>
-    </div>
-    <div class="grid-item">
-        <circle-progress
-            [title]="'Javascript'"
-            [showSubtitle]="false"
-            [percent]="50"
-            [showUnits]="false"
-            [radius]="100"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="300"
-        ></circle-progress>
-    </div>
-    <div class="grid-item">
-        <circle-progress
-            [title]="'Javascript'"
-            [showSubtitle]="false"
-            [percent]="50"
-            [showUnits]="false"
-            [radius]="100"
-            [outerStrokeWidth]="16"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [animation]="true"
-            [animationDuration]="300"
-        ></circle-progress>
-    </div>
-    <div class="grid-item">
-        <circle-progress
-            [title]="'Javascript'"
-            [showSubtitle]="false"
-            [percent]="50"
+            [percent]="skill.porcentaje"
             [showUnits]="false"
             [radius]="100"
             [outerStrokeWidth]="16"
