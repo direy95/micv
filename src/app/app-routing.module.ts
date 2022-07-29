@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditEstudioComponent } from './components/estudios/edit-estudio.component';
 import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path:'',redirectTo:'portfolio', pathMatch:'full'},
   {path:"nuevoT", component:NewTrabajoComponent},
   {path:'editTrab/:id', component:EditTrabajoComponent},
-  {path:'editExp/:id', component:EditExperienciaComponent}
+  {path:'editExp/:id', component:EditExperienciaComponent},
+  {path:'editEst/:id', component:EditEstudioComponent}
 ];
 
 @NgModule({
