@@ -1,7 +1,14 @@
-<h1 id="titulo">Estudios</h1>
+<h1 id="titulo">Estudios <button onclick="!editar">Agregar</button> </h1>
 <div class="container" *ngFor="let estudio of estudios">
     <div class="grid-item" id="logo"><img src="https://picsum.photos/1080/1080" alt="Logo"></div>
     <div class="grid-item item" >{{estudio.anoI}} - {{estudio.anoF}}</div>
     <div class="grid-item item" >{{estudio.titulo}}</div>
     <div class="grid-item item" >{{estudio.descripcion}}</div>
+</div> 
+<div class="container" *ngIf="isLogged&&editar">
+    <div class="grid-item" id="logo"><img src="https://picsum.photos/1080/1080" alt="Logo"></div>
+    <div class="grid-item item" ><input type="number"> - <input type="number"></div>
+    <div class="grid-item item" ><input type="text"></div>
+    <div class="grid-item item" ><input type="text"></div>
+    <button>Guardar</button><button (ngSubmit)="OnEditar()">Cerrar</button>
 </div> 

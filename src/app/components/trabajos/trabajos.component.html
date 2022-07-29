@@ -1,1 +1,24 @@
 <h1 id="titulo">Trabajos</h1>
+<div class="col-lg-2">
+    <button class="btn btn-dark" type="button" routerLink="/nuevoT" *ngIf="isLogged">
+        Nueva experiencia
+    </button>
+</div>
+<div class="col-lg-11">
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let trabajo of trabajo">
+                <td>{{trabajo.nombreT}}</td>
+                <td>{{trabajo.descTrabajo}}</td>
+                <td *ngIf="isLogged">
+                    <button type="button" class="btn btn-light" routerLink="/editTrab/{{trabajo.id}}">
+                    <i class="bi bi-pencil-square"></i>Editar</button>
+                </td>
+                <td *ngIf="isLogged">
+                    <button type="button" class="btn btn-danger" (click)="delete(trabajo.id)">
+                    <i class="bi bi-trash"></i>Borrar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

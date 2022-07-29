@@ -13,9 +13,12 @@ import { TrabajosComponent } from './components/trabajos/trabajos.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { PortfolioService } from './services/portfolio.service';
+import { interceptorProvider } from './services/interceptor-service';
+import { NewTrabajoComponent } from './components/trabajos/new-trabajo.component';
+import { EditTrabajoComponent } from './components/trabajos/edit-trabajo.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { PortfolioService } from './services/portfolio.service';
     SkillsComponent,
     TrabajosComponent,
     IniciarSesionComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    NewTrabajoComponent,
+    EditTrabajoComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +40,11 @@ import { PortfolioService } from './services/portfolio.service';
     NgCircleProgressModule.forRoot({}),
     NgbModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [PortfolioService
+  providers: [PortfolioService,
+    interceptorProvider
   ],
   bootstrap: [AppComponent]
 })
