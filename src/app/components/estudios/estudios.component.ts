@@ -1,6 +1,5 @@
-import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Estudios } from 'src/app/model/estudios.model';
+import { Estudios } from 'src/app/model/estudios';
 import { EstudiosService } from 'src/app/services/estudios.service';
 import { TokenService } from 'src/app/services/token.service';
 
@@ -14,7 +13,6 @@ export class EstudiosComponent implements OnInit {
   constructor(private estudiosService: EstudiosService, private tokenService: TokenService) { }
 
   isLogged = false;
-  editar = false;
 
   ngOnInit(): void {
     this.getEstudios();
@@ -25,18 +23,19 @@ export class EstudiosComponent implements OnInit {
     }
   }
 
-  public getEstudios():void{
-    this.estudiosService.getEstudio().subscribe({
-      next:(Response: Estudios[])=>{
-        this.estudios=Response;
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
-      }
-    })
+  getEstudios():void{
+    this.estudiosService.lista().subscribe(data =>{this.estudios = data;})
   }
 
-  public OnEditar():void{
-    this.editar=true;
+  delete(id:number){
+    if(id!=undefined){
+      this.estudiosService.delete(id).subscribe(
+        data=>{
+          this.getEstudios();
+        }, err=>{
+          alert("No se pudo borrar el estudio ");
+        }
+      )
+    }
   }
 }

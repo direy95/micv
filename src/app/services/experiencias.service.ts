@@ -1,16 +1,32 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Experiencias } from '../model/experiencias.model';
+import { Experiencias } from '../model/experiencias';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExperienciasService {
-  url = "http://localhost:8080/experiencias";
-  constructor(private http: HttpClient) { }
+  url="http://localhost:8080/experiencia/";
+  constructor(private httpClient:HttpClient) { }
 
-  public getExperiencia():Observable<Experiencias[]>{
-    return this.http.get<Experiencias[]>(`${this.url}/traer`);
+  public lista(): Observable<Experiencias[]>{
+    return this.httpClient.get<Experiencias[]>(this.url + 'lista');
+  }
+
+  public detail(id:number): Observable<Experiencias>{
+    return this.httpClient.get<Experiencias>(this.url + `detail/${id}`);
+  }
+
+  public save(trabajo:Experiencias): Observable<any>{
+    return this.httpClient.post<any>(this.url + 'create/', trabajo);
+  }
+
+  public update(id:number, trabajo:Experiencias): Observable<any>{
+    return this.httpClient.put<any>(this.url + `update/${id}`, trabajo);
+  }
+
+  public delete(id:number):Observable<any>{
+    return this.httpClient.delete<any>(this.url + `delete/${id}`);
   }
 }

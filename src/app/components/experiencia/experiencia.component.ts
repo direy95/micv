@@ -1,7 +1,7 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Experiencias } from 'src/app/model/experiencias.model';
+import { Experiencias } from 'src/app/model/experiencias';
 import { ExperienciasService } from 'src/app/services/experiencias.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -10,22 +10,30 @@ import { ExperienciasService } from 'src/app/services/experiencias.service';
 })
 export class ExperienciaComponent implements OnInit {
 
-  public experiencias:Experiencias[]=[];
-
-  constructor(private experienciasService: ExperienciasService) { }
-
+  experiencia:Experiencias[] = [];
+  constructor(private experienciaService: ExperienciasService, private tokenService:TokenService) { }
+  isLogged=false;
   ngOnInit(): void {
     this.getExperiencia();
+    if (this.tokenService.getToken()){
+      this.isLogged=true;
+    }
   }
 
-  private getExperiencia():void{
-    this.experienciasService.getExperiencia().subscribe({
-      next:(Response:Experiencias[])=>{
-        this.experiencias = Response;
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
-      }
-    })
+  getExperiencia():void{
+    this.experienciaService.lista().subscribe(data =>{this.experiencia = data;})
   }
+
+  delete(id:number){
+    if(id!=undefined){
+      this.experienciaService.delete(id).subscribe(
+        data=>{
+          this.getExperiencia();
+        }, err=>{
+          alert("No se pudo borrar la experiencia");
+        }
+      )
+    }
+  }
+
 }

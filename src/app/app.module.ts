@@ -19,6 +19,8 @@ import { PortfolioService } from './services/portfolio.service';
 import { interceptorProvider } from './services/interceptor-service';
 import { NewTrabajoComponent } from './components/trabajos/new-trabajo.component';
 import { EditTrabajoComponent } from './components/trabajos/edit-trabajo.component';
+import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
+import { EditExperienciaComponent } from './components/experiencia/edit-experiencia.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { EditTrabajoComponent } from './components/trabajos/edit-trabajo.compone
     IniciarSesionComponent,
     PortfolioComponent,
     NewTrabajoComponent,
-    EditTrabajoComponent
+    EditTrabajoComponent,
+    NewExperienciaComponent,
+    EditExperienciaComponent
   ],
   imports: [
     BrowserModule,
