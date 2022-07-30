@@ -1,6 +1,6 @@
-<h1 id="titulo">Habilidades</h1>
+<h1 id="titulo">Habilidades <a href="/nuevaSkill" *ngIf="isLogged"><i class="bi bi-plus-square"></i></a></h1>
 <div class="container">
-    <div class="grid-item" *ngFor="let skill of skills">
+    <div class="grid-item" *ngFor="let skill of skill">
         <circle-progress
             [title]=[skill.skill]
             [showSubtitle]="false"
@@ -14,5 +14,11 @@
             [animation]="true"
             [animationDuration]="300"
         ></circle-progress>
+        <div class="col-20" *ngIf="isLogged" id="botones">
+            <button type="button" class="btn btn-danger"  (click)="delete(skill.id)">
+                <i class="bi bi-trash"></i>Borrar</button>
+            <button type="button" class="btn btn-light" routerLink="/editSkill/{{skill.id}}">
+                <i class="bi bi-pencil-square"></i>Editar</button>
+        </div>
     </div>
 </div>

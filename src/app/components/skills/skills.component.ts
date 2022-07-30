@@ -1,7 +1,7 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Skills } from 'src/app/model/skills.model';
+import { Skills } from 'src/app/model/skills';
 import { SkillsService } from 'src/app/services/skills.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-skills',
@@ -9,22 +9,29 @@ import { SkillsService } from 'src/app/services/skills.service';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-  public skills:Skills[]=[];
-
-  constructor(private skillsService:SkillsService) { }
-
+  skill:Skills[] = [];
+  constructor(private skillService: SkillsService, private tokenService:TokenService) { }
+  isLogged=false;
   ngOnInit(): void {
     this.getSkills();
+    if (this.tokenService.getToken()){
+      this.isLogged=true;
+    }
   }
-  
-  public getSkills():void{
-    this.skillsService.getSkill().subscribe({
-      next:(Response:Skills[])=>{
-        this.skills = Response;
-      },
-      error:(error:HttpErrorResponse)=>{
-        alert(error.message);
-      }
-    })
+
+  getSkills():void{
+    this.skillService.lista().subscribe(data =>{this.skill = data;})
+  }
+
+  delete(id:number){
+    if(id!=undefined){
+      this.skillService.delete(id).subscribe(
+        data=>{
+          this.getSkills();
+        }, err=>{
+          alert("No se pudo borrar la experiencia");
+        }
+      )
+    }
   }
 }

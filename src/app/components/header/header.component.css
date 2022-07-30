@@ -15,8 +15,12 @@ header  {
     height: 100vh;
 }
 
+div{
+    margin-top: 12vh;
+}
+
 img{
-    height: 100vh;
+    height: 88vh;
 }
 
 li{
