@@ -8,7 +8,7 @@ import { persona } from 'src/app/model/persona.model';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  persona: persona = new persona("", "", "");
+  persona: persona = new persona("", "", "", "");
   constructor(public personaService: PersonaService) { }
 
   ngOnInit(): void {
@@ -16,5 +16,4 @@ export class HeaderComponent implements OnInit {
       this.persona=data;
     })
   }
-
 }

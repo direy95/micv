@@ -26,6 +26,7 @@ import { EditEstudioComponent } from './components/estudios/edit-estudio.compone
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewSkillComponent } from './components/skills/new-skill.component';
 import { EditSkillComponent } from './components/skills/edit-skill.component';
+import { EditAcercaComponent } from './components/acerca-de/edit-acerca.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { EditSkillComponent } from './components/skills/edit-skill.component';
     EditEstudioComponent,
     NavbarComponent,
     NewSkillComponent,
-    EditSkillComponent
+    EditSkillComponent,
+    EditAcercaComponent
   ],
   imports: [
     BrowserModule,

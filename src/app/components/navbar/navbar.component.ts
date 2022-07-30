@@ -22,6 +22,8 @@ export class NavbarComponent implements OnInit {
     if (this.tokenService.getToken()){
       this.isLogged=true;
       document.getElementById("login").innerHTML="Cerrar sesión";
+      this.tokenService.logOut();
+      window.location.reload();
     }else{
       this.router.navigate(['iniciar-sesion']);
     }

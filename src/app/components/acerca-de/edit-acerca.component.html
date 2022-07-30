@@ -1,0 +1,13 @@
+<div class="container" *ngIf="persona">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="acerca">Acerca</label>
+                    <input type="text" class="form-group" id="acerca" name="acerca" [(ngModel)]="persona.acerca" required>
+                </div>
+                <button class="btn btn-primary">Guardar cambios</button>
+            </form>
+        </div>
+    </div>
+</div>
