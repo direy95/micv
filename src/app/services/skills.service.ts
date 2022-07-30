@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SkillsService {
-  url = "http://localhost:8080/habilidad/";
+  url = "https://micvback.herokuapp.com/habilidad/";
   constructor(private httpClient:HttpClient) { }
 
   public lista(): Observable<Skills[]>{

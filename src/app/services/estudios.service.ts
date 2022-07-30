@@ -7,7 +7,7 @@ import { Estudios } from '../model/estudios';
   providedIn: 'root'
 })
 export class EstudiosService {
-  url="http://localhost:8080/estudio/";
+  url="https://micvback.herokuapp.com/estudio/";
   constructor(private httpClient:HttpClient) { }
 
   public lista(): Observable<Estudios[]>{

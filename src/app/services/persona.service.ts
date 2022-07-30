@@ -7,7 +7,7 @@ import { persona } from '../model/persona.model';
   providedIn: 'root'
 })
 export class PersonaService {
-  URL = "http://localhost:8080/personas/";
+  URL = "https://micvback.herokuapp.com/personas/";
   constructor(private http: HttpClient) { }
   //El observable se usa para hacer peticiones asincronicas
   //http utiliza observable para manejar peticiones

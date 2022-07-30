@@ -1,5 +1,4 @@
-<h1 id="titulo">Estudios<a href="/nuevoEst" *ngIf="isLogged"><i class="bi bi-plus-square"></i></a></h1>
-
+<h1 id="titulo">Estudios<a routerLink="/nuevoEst" *ngIf="isLogged"><i class="bi bi-plus-square"></i></a></h1>
 <div class="container" *ngFor="let estudio of estudios">
     <div class="grid-item" id="logo">
         <img src="https://picsum.photos/1080/1080" alt="Logo">

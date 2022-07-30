@@ -7,7 +7,7 @@ import { Trabajo } from '../model/trabajo';
   providedIn: 'root'
 })
 export class TrabajosService {
-  url="http://localhost:8080/trabajo/";
+  url="https://micvback.herokuapp.com/trabajo/";
   constructor(private httpClient:HttpClient) { }
 
   public lista(): Observable<Trabajo[]>{
