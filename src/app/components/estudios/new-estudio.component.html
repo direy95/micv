@@ -1,17 +1,45 @@
-<div class="container">
+<div class="form-body" >
     <div class="row">
-        <div>
-            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="nombre">Nombre del proyecto</label>
-                    <input type="text" class="form-group" id="nombre" name="nombre" [(ngModel)]="nombre" required>
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Estudios</h3>
+                    <form class="requires-validation" novalidate (ngSubmit)="onCreate()">
+
+                        <div class="col-md-12">
+                           <input class="form-control" type="text" name="name" placeholder="Institución" [(ngModel)]="nombre" required>
+                           <div class="valid-feedback">Username field is valid!</div>
+                           <div class="invalid-feedback">Username field cannot be blank!</div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="descExp" placeholder="Título o disciplina"  [(ngModel)]="descEst" required>
+                             <div class="valid-feedback">Email field is valid!</div>
+                             <div class="invalid-feedback">Email field cannot be blank!</div>
+                        </div>
+
+
+                       <div class="col-md-12">
+                          <input class="form-control" type="number" name="anoI" placeholder="Año de inicio" [(ngModel)]="anoI" required>
+                           <div class="valid-feedback">Password field is valid!</div>
+                           <div class="invalid-feedback">Password field cannot be blank!</div>
+                       </div>
+
+                       <div class="col-md-12">
+                        <input class="form-control" type="number" name="anoF" placeholder="Año de finalización" [(ngModel)]="anoF" required>
+                           <div class="valid-feedback">Password field is valid!</div>
+                           <div class="invalid-feedback">Password field cannot be blank!</div>
+                       </div>
+
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">Agregar estudio</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="nombre">Descripcion del proyecto</label>
-                    <input type="text" class="form-group" id="descEst" name="descEst" [(ngModel)]="descEst" required>
-                </div>
-                <button class="btn btn-primary">Agregar trabajo</button>
-            </form>
+            </div>
         </div>
     </div>
 </div>
+
+
+

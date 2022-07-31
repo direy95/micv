@@ -1,13 +1,26 @@
-<div class="container" *ngIf="persona">
+<div class="form-body" >
     <div class="row">
-        <div>
-            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="acerca">Acerca</label>
-                    <input type="text" class="form-group" id="acerca" name="acerca" [(ngModel)]="persona.acerca" required>
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Acerca de mi</h3>
+                    <form class="requires-validation" novalidate (ngSubmit)="onUpdate()">
+
+                        <div class="col-md-12">
+                           <textarea class="form-control" type="text" name="acerca" placeholder="Acerca de mi" [(ngModel)]="persona.acerca" required></textarea>
+                           <div class="valid-feedback">Username field is valid!</div>
+                           <div class="invalid-feedback">Username field cannot be blank!</div>
+                        </div>
+
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">Editar</button>
+                        </div>
+                    </form>
                 </div>
-                <button class="btn btn-primary">Guardar cambios</button>
-            </form>
+            </div>
         </div>
     </div>
 </div>
+
+
+

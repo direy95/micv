@@ -1,8 +1,5 @@
-<h1 id="titulo">Trabajos</h1>
+<h1 id="titulo">Trabajos <a routerLink="/nuevoT" *ngIf="isLogged"><i class="bi bi-plus-square"></i></a></h1>
 <div class="col-lg-2">
-    <button class="btn btn-dark" type="button" routerLink="/nuevoT" *ngIf="isLogged">
-        Nueva experiencia
-    </button>
 </div>
 <div class="col-lg-11">
     <table class="table">

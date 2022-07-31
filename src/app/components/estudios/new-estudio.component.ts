@@ -21,13 +21,13 @@ export class NewEstudioComponent implements OnInit {
   }
 
   onCreate(){
-    const exp = new Estudios(this.nombre, this.descEst, this.anoI, this.anoF, this.imgEst);
-    this.estService.save(exp).subscribe(data =>{
+    const est = new Estudios(this.nombre, this.descEst, this.anoI, this.anoF, this.imgEst);
+    this.estService.save(est).subscribe(data =>{
       alert("Estudio añadido"); 
       this.router.navigate(['']);
     }, err =>{ 
       alert("Falló");
-      console.log(exp);
+      console.log(est);
       this.router.navigate(['']);
     }
     )
