@@ -27,6 +27,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NewSkillComponent } from './components/skills/new-skill.component';
 import { EditSkillComponent } from './components/skills/edit-skill.component';
 import { EditAcercaComponent } from './components/acerca-de/edit-acerca.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { EditAcercaComponent } from './components/acerca-de/edit-acerca.componen
     NavbarComponent,
     NewSkillComponent,
     EditSkillComponent,
-    EditAcercaComponent
+    EditAcercaComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
