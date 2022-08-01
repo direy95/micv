@@ -1,2 +1,13 @@
-<h1>Acerca de mi  <a routerLink="/editAcerca/{{persona.id}}" *ngIf="isLogged"><i class="bi bi-pencil"></i></a></h1>
-<p>{{persona.acerca}}</p>
+<section>
+    <div id="titulo">
+        <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">Acerca de mi <a routerLink="/editAcerca/{{persona.id}}"
+                *ngIf="isLogged"><i class="bi bi-pencil"></i></a></h1>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="bi bi-star-fill"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+    <h3>{{persona.acerca}}</h3>
+    </div>
+</section>
+

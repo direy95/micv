@@ -20,7 +20,7 @@ export class EditExperienciaComponent implements OnInit {
       data=> {
         this.exp = data;
       }, err =>{
-        alert("Error al modificar trabajo");
+        alert("Error al modificar experiencia");
         this.router.navigate(['']);
       }
     )

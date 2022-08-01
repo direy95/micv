@@ -1,15 +1,20 @@
-<h1 id="titulo">Estudios<a routerLink="/nuevoEst" *ngIf="isLogged"><i class="bi bi-plus-square"></i></a></h1>
-<div class="container" *ngFor="let estudio of estudios">
-    <div class="grid-item" id="logo">
-        <img src="https://picsum.photos/1080/1080" alt="Logo">
+<div id="titulo">
+    <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">Estudios <a routerLink="/nuevoEst"
+            *ngIf="isLogged"><i class="bi bi-plus-square"></i></a></h1>
+    <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="bi bi-star-fill"></i></div>
+        <div class="divider-custom-line"></div>
     </div>
-    <div class="grid-item item" >{{estudio.anoI}} - {{estudio.anoF}}</div>
-    <div class="grid-item item" >{{estudio.nombre}}</div>
-    <div class="grid-item item" >{{estudio.descEst}}</div>
+<article *ngFor="let estudio of estudios">
+    <h2>{{estudio.anoI}} - <span *ngIf="estudio.anoF">{{estudio.anoF}}</span> <span *ngIf="!estudio.anoF">Presente</span></h2>
+    <h4>{{estudio.nombre}}</h4>
+    <h3>{{estudio.descEst}}</h3>
     <div class="col-20" *ngIf="isLogged" id="botones">
-        <button type="button" class="btn btn-danger"  (click)="delete(estudio.id)">
+        <button type="button" class="btn btn-danger" (click)="delete(estudio.id)">
             <i class="bi bi-trash"></i>Borrar</button>
         <button type="button" class="btn btn-light" routerLink="/editEst/{{estudio.id}}">
             <i class="bi bi-pencil-square"></i>Editar</button>
     </div>
-</div>
+    <hr>
+</article>

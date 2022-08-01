@@ -20,7 +20,7 @@ export class EditEstudioComponent implements OnInit {
       data=> {
         this.est = data;
       }, err =>{
-        alert("Error al modificar trabajo");
+        alert("Error al modificar estudio");
         this.router.navigate(['']);
       }
     )

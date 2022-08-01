@@ -18,12 +18,12 @@ export class ExperienciasService {
     return this.httpClient.get<Experiencias>(this.url + `detail/${id}`);
   }
 
-  public save(trabajo:Experiencias): Observable<any>{
-    return this.httpClient.post<any>(this.url + 'create/', trabajo);
+  public save(experiencia:Experiencias): Observable<any>{
+    return this.httpClient.post<any>(this.url + 'create/', experiencia);
   }
 
-  public update(id:number, trabajo:Experiencias): Observable<any>{
-    return this.httpClient.put<any>(this.url + `update/${id}`, trabajo);
+  public update(id:number, experiencia:Experiencias): Observable<any>{
+    return this.httpClient.put<any>(this.url + `update/${id}`, experiencia);
   }
 
   public delete(id:number):Observable<any>{

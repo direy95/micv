@@ -1,37 +1,25 @@
-<h1 id="titulo">Experiencia<a routerLink="/nuevaExp" *ngIf="isLogged"><i class="bi bi-plus-square"></i></a></h1>
-<div class="col-lg-11">
-    <table class="table">
-        <tbody>
-            <tr *ngFor="let exp of experiencia">
-                <td>{{exp.nombre}}</td>
-                <td>{{exp.descExp}}</td>
-                <td *ngIf="isLogged">
-                    <button type="button" class="btn btn-light" routerLink="/editExp/{{exp.id}}">
-                    <i class="bi bi-pencil-square"></i>Editar</button>
-                </td>
-                <td *ngIf="isLogged">
-                    <button type="button" class="btn btn-danger" (click)="delete(exp.id)">
-                    <i class="bi bi-trash"></i>Borrar</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<div class="container" *ngFor="let exp of experiencia">
-    <div class="grid-item" id="logo"><img src="https://picsum.photos/1080/1080" alt="Logo"></div>
-    <div class="grid-item item" >{{exp.anoI}} - {{experiencia.anoF}}</div>
-    <div class="grid-item item" >{{exp.nombre}}</div>
-    <div class="grid-item item" >{{exp.descExp}}</div>
-</div> -->
+<body>
+    <div id="titulo">
+        <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">Experiencias <a routerLink="/nuevaExp"
+                *ngIf="isLogged"><i class="bi bi-plus-square"></i></a></h1>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="bi bi-star-fill"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+    </div>
+    
+    <article *ngFor="let exp of experiencia">
+        <h2>{{exp.anoI}} - <span *ngIf="exp.anoF">{{exp.anoF}}</span> <span *ngIf="!exp.anoF">Presente</span></h2>
+        <h4>{{exp.nombre}}</h4>
+        <h6>{{exp.descExp}}</h6>
+        <div class="col-20" *ngIf="isLogged" id="botones">
+            <button type="button" class="btn btn-danger" (click)="delete(exp.id)">
+                <i class="bi bi-trash"></i>Borrar</button>
+            <button type="button" class="btn btn-light" routerLink="/editExp/{{exp.id}}">
+                <i class="bi bi-pencil-square"></i>Editar</button>
+        </div>
+        <hr>
+    </article>
+    
+</body>

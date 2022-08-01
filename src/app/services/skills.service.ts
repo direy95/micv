@@ -18,12 +18,12 @@ export class SkillsService {
     return this.httpClient.get<Skills>(this.url + `detail/${id}`);
   }
 
-  public save(trabajo:Skills): Observable<any>{
-    return this.httpClient.post<any>(this.url + 'create/', trabajo);
+  public save(skill:Skills): Observable<any>{
+    return this.httpClient.post<any>(this.url + 'create/', skill);
   }
 
-  public update(id:number, trabajo:Skills): Observable<any>{
-    return this.httpClient.put<any>(this.url + `update/${id}`, trabajo);
+  public update(id:number, skill:Skills): Observable<any>{
+    return this.httpClient.put<any>(this.url + `update/${id}`, skill);
   }
 
   public delete(id:number):Observable<any>{

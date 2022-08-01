@@ -1,20 +1,23 @@
-<h1 id="titulo">Trabajos <a routerLink="/nuevoT" *ngIf="isLogged"><i class="bi bi-plus-square"></i></a></h1>
-<div class="col-lg-2">
-</div>
-<div class="col-lg-11">
+<div id="titulo">
+    <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">Trabajos <a routerLink="/nuevoT"
+            *ngIf="isLogged"><i class="bi bi-plus-square"></i></a></h1>
+    <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="bi bi-star-fill"></i></div>
+        <div class="divider-custom-line"></div>
+    </div>
+<div id="tablaT">
     <table class="table">
         <tbody>
             <tr *ngFor="let trabajo of trabajo">
-                <td>{{trabajo.nombreT}}</td>
-                <td>{{trabajo.descTrabajo}}</td>
-                <td *ngIf="isLogged">
-                    <button type="button" class="btn btn-light" routerLink="/editTrab/{{trabajo.id}}">
-                    <i class="bi bi-pencil-square"></i>Editar</button>
-                </td>
-                <td *ngIf="isLogged">
+                <td><h5>{{trabajo.nombreT}}</h5></td>
+                <td><a href="https://{{trabajo.descTrabajo}}"><h5>https//{{trabajo.descTrabajo}}</h5></a></td>
+                <div *ngIf="isLogged">
                     <button type="button" class="btn btn-danger" (click)="delete(trabajo.id)">
                     <i class="bi bi-trash"></i>Borrar</button>
-                </td>
+                    <button type="button" class="btn btn-light" routerLink="/editTrab/{{trabajo.id}}">
+                        <i class="bi bi-pencil-square"></i>Editar</button>
+                </div>
             </tr>
         </tbody>
     </table>
