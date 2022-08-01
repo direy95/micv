@@ -12,14 +12,15 @@
         <div class="grid-item" *ngFor="let skill of skill">
             <circle-progress
                 [title]=[skill.skill]
+                [titleFontSize]="'24'"
                 [showSubtitle]="false"
                 [percent]="skill.porcentaje"
                 [showUnits]="false"
                 [radius]="100"
                 [outerStrokeWidth]="16"
                 [innerStrokeWidth]="8"
-                [outerStrokeColor]="'#78C000'"
-                [innerStrokeColor]="'#C7E596'"
+                [outerStrokeColor]="'#020080'"
+                [innerStrokeColor]="'#3f3f3f'"
                 [animation]="true"
                 [animationDuration]="300"
             ></circle-progress>

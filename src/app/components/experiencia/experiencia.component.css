@@ -1,9 +1,18 @@
 body{
     background-color: aquamarine;
+    padding-bottom: 6em;
+}
+
+#titulo{
+  padding-top: 6em;
+}
+
+hr{
+  margin: 1em auto;
 }
 
 article{
-    margin: auto  20vw;
+    margin: 1em  20vw;
   }
   
   hr.rounded {

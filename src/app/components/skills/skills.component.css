@@ -10,8 +10,17 @@ body{
     justify-content: space-around;
 }
 
+.grid-item{
+  margin-bottom: 2em;
+}
+
+body{
+  background-color: aquamarine;
+  padding-bottom: 6em;
+}
+
 #titulo{
-    margin-top: 6rem;
+padding-top: 6em;
 }
 
     h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {

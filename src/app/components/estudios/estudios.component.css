@@ -2,6 +2,10 @@ article{
   margin: auto 20vw
 }
 
+body{
+  margin-bottom: 8em;
+}
+
 img{
     width: 200px;
 }
